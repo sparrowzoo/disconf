@@ -145,11 +145,7 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
 
     /**
      * 判断是否存在
-     *
      * @param path
-     *
-     * @return
-     *
      * @throws InterruptedException
      * @throws KeeperException
      */
