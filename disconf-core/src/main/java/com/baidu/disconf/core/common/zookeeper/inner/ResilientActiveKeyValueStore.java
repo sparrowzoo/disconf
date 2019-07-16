@@ -38,18 +38,7 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
         super(debug);
     }
 
-    /**
-     * @param path
-     * @param value
-     *
-     * @return void
-     *
-     * @throws InterruptedException
-     * @throws KeeperException
-     * @Description: 写PATH数据, 是持久化的
-     * @author liaoqiqi
-     * @date 2013-6-14
-     */
+
     public void write(String path, String value) throws InterruptedException, KeeperException {
 
         int retries = 0;
@@ -89,18 +78,6 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
         }
     }
 
-    /**
-     * @param path
-     * @param value
-     *
-     * @return void
-     *
-     * @throws InterruptedException
-     * @throws KeeperException
-     * @Description: 创建一个临时结点，如果原本存在，则不新建, 如果存在，则更新值
-     * @author liaoqiqi
-     * @date 2013-6-14
-     */
     public String createEphemeralNode(String path, String value, CreateMode createMode)
         throws InterruptedException, KeeperException {
 
@@ -143,16 +120,6 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
         }
     }
 
-    /**
-     * 判断是否存在
-     *
-     * @param path
-     *
-     * @return
-     *
-     * @throws InterruptedException
-     * @throws KeeperException
-     */
     public boolean exists(String path) throws InterruptedException, KeeperException {
 
         int retries = 0;
@@ -192,18 +159,7 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
         }
     }
 
-    /**
-     * @param path
-     * @param watcher
-     *
-     * @return String
-     *
-     * @throws InterruptedException
-     * @throws KeeperException
-     * @Description: 读数据
-     * @author liaoqiqi
-     * @date 2013-6-14
-     */
+
     public String read(String path, Watcher watcher, Stat stat) throws InterruptedException, KeeperException {
 
         byte[] data = zk.getData(path, watcher, stat);
@@ -211,11 +167,7 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
     }
 
     /**
-     * @return List<String>
-     *
-     * @Description: 获取子孩子数据
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public List<String> getRootChildren() {
 
@@ -231,15 +183,7 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
         return children;
     }
 
-    /**
-     * @param path
-     *
-     * @return void
-     *
-     * @Description: 删除结点
-     * @author liaoqiqi
-     * @date 2013-6-17
-     */
+
     public void deleteNode(String path) {
 
         try {

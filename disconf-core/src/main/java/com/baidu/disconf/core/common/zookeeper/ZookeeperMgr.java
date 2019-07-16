@@ -30,12 +30,8 @@ public class ZookeeperMgr {
     private String curDefaultPrefixString = "";
 
     /**
-     * @return void
-     *
      * @throws Exception
-     * @Description: 初始化
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public void init(String host, String defaultPrefixString, boolean debug) throws Exception {
 
@@ -80,13 +76,9 @@ public class ZookeeperMgr {
     }
 
     /**
-     * @return void
-     *
      * @throws IOException
      * @throws InterruptedException
-     * @Description: 初始化
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     private void initInternal(String hosts, String defaultPrefixString, boolean debug)
             throws IOException, InterruptedException {
@@ -130,11 +122,7 @@ public class ZookeeperMgr {
     }
 
     /**
-     * @return void
-     *
-     * @Description: 应用程序必须调用它来释放zookeeper资源
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public void release() throws InterruptedException {
 
@@ -142,11 +130,7 @@ public class ZookeeperMgr {
     }
 
     /**
-     * @return List<String>
-     *
-     * @Description: 获取子孩子 列表
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public List<String> getRootChildren() {
 
@@ -154,11 +138,7 @@ public class ZookeeperMgr {
     }
 
     /**
-     * @return List<String>
-     *
-     * @Description: 写持久化结点, 没有则新建, 存在则进行更新
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public void writePersistentUrl(String url, String value) throws Exception {
 
@@ -166,11 +146,7 @@ public class ZookeeperMgr {
     }
 
     /**
-     * @return List<String>
-     *
-     * @Description: 读结点数据
      * @author liaoqiqi
-     * @date 2013-6-14
      */
     public String readUrl(String url, Watcher watcher) throws Exception {
 
@@ -206,13 +182,9 @@ public class ZookeeperMgr {
      * @param watcher
      * @param stat
      *
-     * @return String
-     *
      * @throws InterruptedException
      * @throws KeeperException
-     * @Description: 带状态信息的读取数据
      * @author liaoqiqi
-     * @date 2013-6-17
      */
     public String read(String path, Watcher watcher, Stat stat) throws InterruptedException, KeeperException {
 
@@ -222,11 +194,7 @@ public class ZookeeperMgr {
     /**
      * @param path
      *
-     * @return void
-     *
-     * @Description: 删除结点
      * @author liaoqiqi
-     * @date 2013-6-17
      */
     public void deleteNode(String path) {
 

@@ -33,9 +33,9 @@ import org.apache.zookeeper.data.Stat;
 
 /**
  * A <a href="package.html">protocol to implement an exclusive
- * write lock or to elect a leader</a>. <p/> You invoke {@link #lock()} to
+ * write lock or to elect a leader</a>. <p> You invoke {@link #lock()} to
  * start the process of grabbing the lock; you may get the lock then or it may be
- * some time later. <p/> You can register a listener so that you are invoked
+ * some time later. </p> You can register a listener so that you are invoked
  * when you get the lock; otherwise you can ask if you have the lock
  * by calling {@link #isOwner()}
  */
@@ -56,7 +56,7 @@ public class WriteLock extends ProtocolSupport {
      *
      * @param zookeeper zookeeper client instance
      * @param dir       the parent path you want to use for locking
-     * @param acls      the acls that you want to use for all the paths,
+     * @param acl     the acls that you want to use for all the paths,
      *                  if null world read/write is used.
      */
     public WriteLock(ZooKeeper zookeeper, String dir, List<ACL> acl) {
